@@ -1,10 +1,15 @@
 <template>
   <div>
-    <select class="form-select" aria-label="Default select example">
+    <!-- <select class="form-select" aria-label="Default select example">
       <option selected>Open this select menu</option>
       <option value="Slide" v-on:click="component = 'slide'">Slide</option>
-      <option value="Constant" v-on:click="component = 'constant'">Constant</option>
-    </select>
+      <option value="Constant" v-on:click="component = 'constant'">
+        Constant
+      </option>
+    </select> -->
+
+    <div class="btn btn-outline-primary" v-on:click="component = 'slide'">Slide</div>
+    <div class="btn btn-outline-primary" v-on:click="component = 'constant'">constant</div>
 
     <div class="btn btn-primary">Eteindre</div>
 
@@ -13,8 +18,8 @@
 </template>
 
 <script>
-import Slide from '../Slide/Slide.vue'
-import Constant from '../Constant/Constant.vue'
+import Slide from "../Slide/Slide.vue";
+import Constant from "../Constant/Constant.vue";
 
 export default {
   name: "Salon",
@@ -24,15 +29,15 @@ export default {
     };
   },
   components: {
-    'slide': Slide,
-    'constant': Constant,
+    slide: Slide,
+    constant: Constant,
   },
 };
 </script>
 
 <style scoped>
-.reglages{
-    height: 80%;
-    width: 100%;
+.reglages {
+  height: 80%;
+  width: 100%;
 }
 </style>
