@@ -1,5 +1,8 @@
 <template>
   <div class="slide">
+
+    <colorwheel></colorwheel>
+
     <form>
       <label for="range" class="form-label">Range</label>
       <input
@@ -54,12 +57,17 @@
 </template>
 
 <script>
+import Colorwheel from "../Colorwheel/Colorwheel.vue"
+
 export default {
   name: "Slide",
   data() {
     return {
       range: 0,
     };
+  },
+  components:{
+    'colorwheel': Colorwheel,
   },
 };
 </script>
