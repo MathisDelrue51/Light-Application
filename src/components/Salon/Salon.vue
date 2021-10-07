@@ -1,15 +1,10 @@
 <template>
   <div>
-    <!-- <select class="form-select" aria-label="Default select example">
+    <select class="form-select" v-on:change="onChange($event)">
       <option selected>Open this select menu</option>
-      <option value="Slide" v-on:click="component = 'slide'">Slide</option>
-      <option value="Constant" v-on:click="component = 'constant'">
-        Constant
-      </option>
-    </select> -->
-
-    <div class="btn btn-outline-primary" v-on:click="component = 'slide'">Slide</div>
-    <div class="btn btn-outline-primary" v-on:click="component = 'constant'">constant</div>
+      <option value="slide">Slide</option>
+      <option value="constant">Constant</option>
+    </select>
 
     <div class="btn btn-primary">Eteindre</div>
 
@@ -31,6 +26,11 @@ export default {
   components: {
     slide: Slide,
     constant: Constant,
+  },
+  methods: {
+    onChange(event) {
+      this.component= event.target.value
+    },
   },
 };
 </script>

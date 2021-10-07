@@ -11,16 +11,17 @@
         min="1"
         max="240"
         id="range"
-        value="200"
+        v-model="valueRange"
       />      
       <input
         type="text"
         class="form-control"
         id="valueRange"
-        placeholder="0"
+        v-model="valueRange"
       />
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" v-on:click.prevent="validateRange">Submit</button>
     </form>
+
     <form>
       <label for="speed" class="form-label">Speed</label>
       <input
@@ -30,9 +31,15 @@
         max="1000"
         step="5"
         id="speed"
-        value="200"
+        v-model="valueSpeed"
       />
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <input
+        type="text"
+        class="form-control"
+        id="valueRange"
+        v-model="valueSpeed"
+      />
+      <button type="submit" class="btn btn-primary" v-on:click.prevent="validateSpeed">Submit</button>
     </form>
     <form>
       <label for="step" class="form-label">Step</label>
@@ -42,9 +49,15 @@
         min="1"
         max="240"
         id="step"
-        value="200"
+        v-model="valueStep"
       />
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <input
+        type="text"
+        class="form-control"
+        id="valueRange"
+        v-model="valueStep"
+      />
+      <button type="submit" class="btn btn-primary" v-on:click.prevent="validateStep">Submit</button>
     </form>
 
     <div class="btn btn-primary">Mode1</div>
@@ -63,12 +76,28 @@ export default {
   name: "Slide",
   data() {
     return {
-      range: 0,
+      valueRange:"200",
+      valueSpeed:"200",
+      valueStep:"200",
     };
   },
   components:{
     'colorwheel': Colorwheel,
   },
+  methods:{
+    validateRange(){
+      console.log("validate range")
+      console.log(this.valueRange)
+    },
+    validateSpeed(){
+      console.log("validate speed")
+      console.log(this.valueSpeed)
+    },
+    validateStep(){
+      console.log("validate step")
+      console.log(this.valueStep)
+    },
+  }
 };
 </script>
 
