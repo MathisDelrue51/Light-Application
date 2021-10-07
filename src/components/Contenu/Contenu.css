@@ -1,0 +1,14 @@
+#place {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5% auto;
+}
+
+p {
+    color: brown;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 1% auto;
+}

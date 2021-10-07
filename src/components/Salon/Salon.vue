@@ -1,14 +1,17 @@
 <template>
-  <div>
-    <select class="form-select" v-on:change="onChange($event)">
+  <div class="container">
+    <div id="selectFunction">
+      <select class="form-select form-select-lg me-3" v-on:change="onChange($event)">
       <option selected>Open this select menu</option>
       <option value="slide">Slide</option>
       <option value="constant">Constant</option>
     </select>
 
-    <div class="btn btn-primary">Eteindre</div>
+    <div class="btn btn-primary btn-lg">Eteindre</div>
+    </div>
+    
 
-    <div class="reglages" v-bind:is="component"></div>
+    <div class="container mt-3" v-bind:is="component"></div>
   </div>
 </template>
 
@@ -35,9 +38,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.reglages {
-  height: 80%;
-  width: 100%;
-}
+<style scoped src='./Salon.css'>
+
 </style>
