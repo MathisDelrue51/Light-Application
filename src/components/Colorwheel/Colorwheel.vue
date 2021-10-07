@@ -23,7 +23,7 @@ export default {
   name: "Colorwheel",
   data() {
     return {
-      color: "#fff",
+      color: "#ff0000",
     };
   },
   components: {
