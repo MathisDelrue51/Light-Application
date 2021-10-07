@@ -1,5 +1,5 @@
 <template>
-    <div class="constant">
+    <div class="container">
         <colorwheel></colorwheel>
         <div class="btn btn-primary">Valider</div>
     </div>

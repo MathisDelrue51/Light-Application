@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="container">
     <ColorPicker
-      :width="300"
-      :height="300"
+      :width="width"
+      :height="height"
       :disabled="false"
       startColor="#ff0000"
       @colorChange="onColorChange"
@@ -24,6 +24,8 @@ export default {
   data() {
     return {
       color: "#ff0000",
+      height: 250,
+      width: 250,
     };
   },
   components: {

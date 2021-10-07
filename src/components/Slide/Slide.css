@@ -1,0 +1,19 @@
+form {
+    color: rgb(27, 53, 139);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 2%;
+}
+
+.valueRangeBar {
+    display: flex;
+    flex-direction: row;
+}
+
+.switchMode {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin: 10% auto;
+}
