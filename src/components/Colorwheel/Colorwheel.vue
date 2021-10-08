@@ -13,29 +13,27 @@
         <circle cx="16" cy="16" r="15" :fill="color" />
       </svg>
     </div>
-    <form>
-      <div class="selected-color-rbg">
-        <input
-          type="text"
-          class="form-control me-2"
-          id="rgb-r"
-          v-model="rValue"
-        />
-        <input
-          type="text"
-          class="form-control me-2"
-          id="rgb-g"
-          v-model="gValue"
-        />
-        <input
-          type="text"
-          class="form-control me-2"
-          id="rgb-b"
-          v-model="bValue"
-        />
-      </div>
-      <div class="btn btn-primary validateRGB" @click="rgbToHex()">Valider</div>
-    </form>
+
+    <div class="selected-color-rbg">
+      <input
+        type="text"
+        class="form-control me-2"
+        id="rgb-r"
+        v-model="rValue"
+      />
+      <input
+        type="text"
+        class="form-control me-2"
+        id="rgb-g"
+        v-model="gValue"
+      />
+      <input
+        type="text"
+        class="form-control me-2"
+        id="rgb-b"
+        v-model="bValue"
+      />
+    </div>
   </div>
 </template>
 
@@ -76,13 +74,22 @@ export default {
       this.bValue = parseInt(result[3], 16);
     },
     rgbToHex() {
-      console.log("function");
-      let r = this.rValue;
-      let g = this.gValue;
-      let b = this.bValue;
-
       this.color =
-        "#" + ((1 << 24) + (+r << 16) + (+g << 8) + +b).toString(16).slice(1);
+        "#" +
+        ((1 << 24) + (+this.rValue << 16) + (+this.gValue << 8) + +this.bValue)
+          .toString(16)
+          .slice(1);
+    },
+  },
+  watch: {
+    rValue: function () {
+      this.rgbToHex();
+    },
+    gValue: function () {
+      this.rgbToHex();
+    },
+    bValue: function () {
+      this.rgbToHex();
     },
   },
 };

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <colorwheel></colorwheel>
-        <div class="btn btn-primary">Valider</div>
+        <div class="btn btn-primary validateButton">Valider</div>
     </div>
 </template>
 
@@ -17,5 +17,8 @@ export default {
 </script>
 
 <style scoped>
-
+.validateButton{
+    display: block;
+    margin: 5% auto;
+}
 </style>
