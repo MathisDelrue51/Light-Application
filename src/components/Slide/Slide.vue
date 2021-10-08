@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <colorwheel></colorwheel>
+    <!-- <colorpicker></colorpicker> -->
 
     <div class="rangeBars">
       <form>
@@ -99,6 +100,7 @@
 
 <script>
 import Colorwheel from "../Colorwheel/Colorwheel.vue";
+// import Colorpicker from "../ColorPicker/ColorPicker.vue"
 
 export default {
   name: "Slide",
@@ -111,6 +113,7 @@ export default {
   },
   components: {
     colorwheel: Colorwheel,
+    // colorpicker: Colorpicker,
   },
   methods: {
     validateRange() {
