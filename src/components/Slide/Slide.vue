@@ -3,87 +3,72 @@
     <colorwheel></colorwheel>
 
     <div class="rangeBars">
-      <form>
-        <label for="range" class="form-label mt-2">Range</label>
-        <input
-          type="range"
-          class="form-range"
-          min="1"
-          max="240"
-          id="range"
-          v-model="valueRange"
-        />
-        <div class="valueRangeBar mt-2">
+      <label for="range" class="form-label mt-2">Range</label>
+      <div class="valueRangeBar">
+        <div class="col-8 me-2">
           <input
-            type="text"
-            class="form-control me-2"
-            id="valueRange"
+            type="range"
+            class="form-range me-2"
+            min="1"
+            max="240"
+            id="rangeBar"
             v-model="valueRange"
           />
-          <button
-            type="submit"
-            class="btn btn-primary"
-            v-on:click.prevent="validateRange"
-          >
-            Submit
-          </button>
         </div>
-      </form>
-
-      <form>
-        <label for="speed" class="form-label">Speed</label>
-
-        <input
-          type="range"
-          class="form-range"
-          min="30"
-          max="1000"
-          step="5"
-          id="speed"
-          v-model="valueSpeed"
-        />
-        <div class="valueRangeBar mt-2">
+        <div class="col-3">
           <input
             type="text"
-            class="form-control me-2"
-            id="valueRange"
+            class="form-control"
+            id="rangeText"
+            v-model="valueRange"
+          />
+        </div>
+      </div>
+
+      <label for="step" class="form-label mt-2">Step</label>
+      <div class="valueRangeBar">
+        <div class="col-8 me-2">
+          <input
+            type="range"
+            class="form-range me-2"
+            min="30"
+            max="1000"
+            step="5"
+            id="speedBar"
             v-model="valueSpeed"
           />
-          <button
-            type="submit"
-            class="btn btn-primary"
-            v-on:click.prevent="validateSpeed"
-          >
-            Submit
-          </button>
         </div>
-      </form>
-      <form>
-        <label for="step" class="form-label mt-2">Step</label>
-        <input
-          type="range"
-          class="form-range"
-          min="1"
-          max="240"
-          id="step"
-          v-model="valueStep"
-        />
-        <div class="valueRangeBar mt-2">
+        <div class="col-3">
           <input
             type="text"
-            class="form-control me-2"
-            id="valueRange"
+            class="form-control"
+            id="speedText"
+            v-model="valueSpeed"
+          />
+        </div>
+      </div>
+
+      <label for="step" class="form-label mt-2">Step</label>
+      <div class="valueRangeBar">
+        <div class="col-8 me-2">
+          <input
+            type="range"
+            class="form-range me-2"
+            min="1"
+            max="240"
+            id="stepBar"
             v-model="valueStep"
           />
-          <button
-            type="submit"
-            class="btn btn-primary"
-            v-on:click.prevent="validateStep"
-          >
-            Submit
-          </button>
         </div>
-      </form>
+        <div class="col-3">
+          <input
+            type="text"
+            class="form-control"
+            id="stepText"
+            v-model="valueStep"
+          />
+        </div>
+      </div>
     </div>
 
     <div class="switchMode">
