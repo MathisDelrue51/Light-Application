@@ -17,3 +17,9 @@
 .selected-color-info p {
     margin: 0 5px 0 0;
 }
+
+.selected-color-rbg {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1%;
+}
