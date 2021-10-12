@@ -5,7 +5,7 @@
         class="form-select form-select-lg me-3"
         v-on:change="onChange($event)"
       >
-        <option selected>Open this select menu</option>
+        <option selected value="">Open this select menu</option>
         <option value="slide">Slide</option>
         <option value="constant">Constant</option>
       </select>
