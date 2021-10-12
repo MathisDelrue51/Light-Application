@@ -55,11 +55,14 @@ export default {
   components: {
     ColorPicker,
   },
+  created() {
+    this.$emit("colorModification", {r: this.rValue, g:this.gValue, b:this.bValue});
+  },
   methods: {
     onColorChange(newColor) {
       this.color = newColor;
       this.hexToRGB(newColor);
-      this.$emit("colorModification", this.rValue, this.gValue, this.bValue);
+      this.$emit("colorModification", {r: this.rValue, g:this.gValue, b:this.bValue});
     },
     hexToRGB(hex) {
       // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")

@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <colorwheel v-on:colorModification="newColor($event)"></colorwheel>
-    <div class="btn btn-primary validateButton" @click.prevent="validateColor">Valider</div>
+    <div class="btn btn-primary validateButton" @click.prevent="validateColor">
+      Valider
+    </div>
   </div>
 </template>
 
@@ -20,7 +22,7 @@ export default {
   },
   components: {
     colorwheel: Colorwheel,
-  },
+  }, 
   methods: {
     newColor(newColor) {
       this.rValue = newColor.r;
