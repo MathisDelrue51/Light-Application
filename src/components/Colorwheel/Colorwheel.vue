@@ -59,6 +59,7 @@ export default {
     onColorChange(newColor) {
       this.color = newColor;
       this.hexToRGB(newColor);
+      this.$emit("colorModification", this.rValue, this.gValue, this.bValue);
     },
     hexToRGB(hex) {
       // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -79,6 +80,7 @@ export default {
         ((1 << 24) + (+this.rValue << 16) + (+this.gValue << 8) + +this.bValue)
           .toString(16)
           .slice(1);
+      this.$emit("colorModification", {r: this.rValue, g:this.gValue, b:this.bValue});
     },
   },
   watch: {
