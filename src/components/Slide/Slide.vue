@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <colorwheel></colorwheel>
+    <colorwheel v-on:colorModification="newColor($event)"></colorwheel>
 
     <div class="rangeBars">
       <label for="range" class="form-label mt-2">Range</label>
@@ -72,43 +72,137 @@
     </div>
 
     <div class="switchMode">
-      <div class="btn btn-primary">Mode1</div>
-      <div class="btn btn-primary">Mode2</div>
-      <div class="btn btn-primary">Mode3</div>
-      <div class="btn btn-primary">Mode4</div>
-      <div class="btn btn-primary">Mode5</div>
-      <div class="btn btn-primary">Mode6</div>
+      <div class="btn btn-primary" @click.prevent="switchToMode1">Mode1</div>
+      <div class="btn btn-primary" @click.prevent="switchToMode2">Mode2</div>
+      <div class="btn btn-primary" @click.prevent="switchToMode3">Mode3</div>
+      <div class="btn btn-primary" @click.prevent="switchToMode4">Mode4</div>
+      <div class="btn btn-primary" @click.prevent="switchToMode5">Mode5</div>
+      <div class="btn btn-primary" @click.prevent="switchToMode6">Mode6</div>
     </div>
   </div>
 </template>
 
 <script>
 import Colorwheel from "../Colorwheel/Colorwheel.vue";
+import axios from "axios";
 
 export default {
   name: "Slide",
   data() {
     return {
-      valueRange: "200",
-      valueSpeed: "200",
-      valueStep: "200",
+      mode: "mode 1",
+      valueRange: 200,
+      valueSpeed: 200,
+      valueStep: 200,
+      rValue: 255,
+      gValue: 0,
+      bValue: 0,
     };
   },
   components: {
     colorwheel: Colorwheel,
   },
   methods: {
-    validateRange() {
-      console.log("validate range");
-      console.log(this.valueRange);
+    switchToMode1() {
+      this.mode = "mode 1";
+      axios
+        .post("http://localhost:3000/mode1", {
+          mode: this.mode,
+          valueRange: this.valueRange,
+          valueSpeed: this.valueSpeed,
+          valueStep: this.valueStep,
+          rValue: this.rValue,
+          gValue: this.gValue,
+          bValue: this.bValue,
+        })
+        .then((reponse) => {
+          console.log(reponse.data);
+        });
     },
-    validateSpeed() {
-      console.log("validate speed");
-      console.log(this.valueSpeed);
+    switchToMode2() {
+      this.mode = "mode 2";
+      axios
+        .post("http://localhost:3000/mode2", {
+          mode: this.mode,
+          valueRange: this.valueRange,
+          valueSpeed: this.valueSpeed,
+          valueStep: this.valueStep,
+          rValue: this.rValue,
+          gValue: this.gValue,
+          bValue: this.bValue,
+        })
+        .then((reponse) => {
+          console.log(reponse.data);
+        });
     },
-    validateStep() {
-      console.log("validate step");
-      console.log(this.valueStep);
+    switchToMode3() {
+      this.mode = "mode 3";
+      axios
+        .post("http://localhost:3000/mode3", {
+          mode: this.mode,
+          valueRange: this.valueRange,
+          valueSpeed: this.valueSpeed,
+          valueStep: this.valueStep,
+          rValue: this.rValue,
+          gValue: this.gValue,
+          bValue: this.bValue,
+        })
+        .then((reponse) => {
+          console.log(reponse.data);
+        });
+    },
+    switchToMode4() {
+      this.mode = "mode 4";
+      axios
+        .post("http://localhost:3000/mode4", {
+          mode: this.mode,
+          valueRange: this.valueRange,
+          valueSpeed: this.valueSpeed,
+          valueStep: this.valueStep,
+          rValue: this.rValue,
+          gValue: this.gValue,
+          bValue: this.bValue,
+        })
+        .then((reponse) => {
+          console.log(reponse.data);
+        });
+    },
+    switchToMode5() {
+      this.mode = "mode 5";
+      axios
+        .post("http://localhost:3000/mode5", {
+          mode: this.mode,
+          valueRange: this.valueRange,
+          valueSpeed: this.valueSpeed,
+          valueStep: this.valueStep,
+          rValue: this.rValue,
+          gValue: this.gValue,
+          bValue: this.bValue,
+        })
+        .then((reponse) => {
+          console.log(reponse.data);
+        });
+    },
+    switchToMode6() {
+      this.mode = "mode 6";
+      axios
+        .post("http://localhost:3000/mode6", {
+          mode: this.mode,
+          valueRange: this.valueRange,
+          valueSpeed: this.valueSpeed,
+          valueStep: this.valueStep,
+          rValue: this.rValue,
+          gValue: this.gValue,
+          bValue: this.bValue,
+        })
+        .then((reponse) => {
+          console.log(reponse.data);
+        });
+    },
+    newColor(newColor) {
+      this.rValue = newColor.r;
+      this.gValue = newColor.g;
+      this.bValue = newColor.b;
     },
   },
 };
